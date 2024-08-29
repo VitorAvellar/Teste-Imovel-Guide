@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imovel Guide</title>
+
+    <!-- Link do Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Link do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- link do  html2Canvas -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <!-- Link do CSS -->
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <!-- Nav bar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand text-light" href="#">Imovel-Guide</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
+            aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Condominios<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Fórum</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Guia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Artigos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Ferrmamentas</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Cotar Imoveis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Plano</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Entrar</a>
+                </li>
+                <button class="btn-cadastro btn-outline-light text-light" type="submit">Cadastre-se</button>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="d-flex align-items-start p-2">
+                        <img src="imagens/Corretora.jfif" class="card-img-top custom-img" alt="Foto de uma corretora">
+                        <div class="ms-3 d-flex flex-column justify-content-center">
+                            <h5 class="card-title corretora">Nome Corretora</h5>
+                            <p class="card-text pontos-corretora">3.000 pontos</p>
+                            <a href="#" class="btn numero-corretora btn-link text-danger"
+                                onclick="mostrarTelefone('telefone-corretora')">ver telefone</a>
+                            <p id="telefone-corretora" class="telefone" style="display: none;">(11) 96788-9820</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start p-2 mt-2">
+                        <img src="imagens/Corretor.jfif" class="card-img-top custom-img" alt="Foto de um corretor">
+                        <div class="ms-3 d-flex flex-column justify-content-center">
+                            <h5 class="card-title corretor">Nome Corretor</h5>
+                            <p class="card-text pontos-corretor">1.260 pontos</p>
+                            <a href="#" class="btn numero-corretor btn-link text-danger"
+                                onclick="mostrarTelefone('telefone-corretor')">ver telefone</a>
+                            <p id="telefone-corretor" class="telefone" style="display: none;">(11) 99948-6395</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card d-flex flex-column">
+                    <div class="card-body">
+                        <h5 class="card-title">Mande uma mensagem:</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="cpf">Digite o seu CPF:</label>
+                                <input type="text" class="form-control" id="cpf" maxlength="14"
+                                    oninput="mascaraCPF(this)" required placeholder="000.000.000-00">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Digite o seu telefone:</label>
+                                <input type="text" class="form-control" id="phone" maxlength="15"
+                                    oninput="mascaraTel(this)" required placeholder="(99) 9999-9999">
+                            </div>
+                            <div class="form-group">
+                                <label for="textarea">Digite o assunto:</label>
+                                <input type="text" class="form-control" id="textarea" placeholder="">
+                            </div>
+                            <button type="submit" onclick="envioAlert()"
+                                class="btn btn-orange btn-block mt-auto">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card d-flex flex-column">
+                    <div class="card-body">
+                        <h5 class="card-title">Regra de 3</h5>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" class="form-control mb-3" id="valor1" placeholder="60">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control mb-3" id="valor2" placeholder="100">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" class="form-control mb-3" id="valor3" placeholder="30">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control mb-3" id="resultado" readonly placeholder="">
+                            </div>
+                        </div>
+                        <button onclick="calcular()" class="btn btn-orange btn-block mt-auto">Calcular</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb4">
+                <div class="card2">
+                    <img src="imagens/casa.jfif" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <button onclick="openModal()" class="btn btn-orange btn-block">Modal</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-4 mb4">
+                <div class="card2" id="capture">
+                    <img src="imagens/casa.jfif" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <button class="btn btn-orange btn-block" id="download">Dowload</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4 mb4">
+                <div class="card2 zoom-on-load">
+                    <img src="imagens/casa.jfif" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- Modal -->
+    </div>
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Casa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="imagens/casa.jfif" class="" alt="Imagem do Imóvel">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Link do javaScript -->
+    <script src="script.js"></script>
+
+    <!-- Link do js bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
