@@ -26,7 +26,11 @@
 <body>
     <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand text-light" href="#">Imovel-Guide</a>
+        
+        <a class="navbar-brand text-light" href="#">
+            <img src="imagens/logo-imovel-guide-cinza2.png" alt="Logo da Imóvel Guide">
+        </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado"
             aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
             <span class="navbar-toggler-icon "></span>
@@ -48,7 +52,7 @@
                     <a class="nav-link text-light" href="#">Artigos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-light" href="#">Ferrmamentas</a>
+                    <a class="nav-link text-light" href="#">Ferramentas</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -66,8 +70,8 @@
         </div>
     </nav>
 
-
-    <div class="container mt-4">
+<!-- Primeira liha dos card -->
+   <div class="container mt-4">
         <div class="row">
             <div class="col-md-4 mb-4">
                 <div class="card">
@@ -93,7 +97,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4 mb-4">
                 <div class="card d-flex flex-column">
                     <div class="card-body">
@@ -111,7 +114,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="textarea">Digite o assunto:</label>
-                                <input type="text" class="form-control" id="textarea" placeholder="">
+                                <textarea name="textarea" class="form-control" id="textarea" placeholder="Digite algo"></textarea>
                             </div>
                             <button type="submit" onclick="envioAlert()"
                                 class="btn btn-orange btn-block mt-auto">Enviar</button>
@@ -119,7 +122,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-md-4 mb-4">
                 <div class="card d-flex flex-column">
                     <div class="card-body">
@@ -146,10 +148,11 @@
             </div>
         </div>
 
+            <!-- Segunda liha dos card -->
         <div class="row">
             <div class="col-md-4 mb4">
                 <div class="card2">
-                    <img src="imagens/casa.jfif" class="card-img-top" alt="">
+                    <img src="imagens/casa.jfif" class="card-img-top" alt="Imagem de uma casa bem grande">
                     <div class="card-body text-center">
                         <button onclick="openModal()" class="btn btn-orange btn-block">Modal</button>
                     </div>
@@ -159,7 +162,7 @@
 
             <div class="col-md-4 mb4">
                 <div class="card2" id="capture">
-                    <img src="imagens/casa.jfif" class="card-img-top" alt="">
+                    <img src="imagens/casa.jfif" class="card-img-top" alt="Imagem de uma casa bem grande">
                     <div class="card-body text-center">
                         <button class="btn btn-orange btn-block" id="download">Dowload</button>
                     </div>
@@ -168,7 +171,7 @@
             </div>
             <div class="col-md-4 mb4">
                 <div class="card2 zoom-on-load">
-                    <img src="imagens/casa.jfif" class="card-img-top" alt="">
+                    <img src="imagens/casa.jfif" class="card-img-top" alt="Imagem de uma casa bem grande">
                     <div class="card-body text-center">
                     </div>
                 </div>
@@ -178,7 +181,7 @@
 
     </div>
 
-<!-- Modal -->
+<!-- Criação do Modal -->
     </div>
     <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel"
         aria-hidden="true">
@@ -191,7 +194,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <img src="imagens/casa.jfif" class="" alt="Imagem do Imóvel">
+                    <img src="imagens/casa.jfif" class="" alt="Imagem de uma casa bem grande">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
